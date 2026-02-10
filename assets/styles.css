@@ -1,0 +1,174 @@
+/* ===== N&C Estética — Estilos principales ===== */
+:root{
+  --bg: #fffaf3;           /* marfil cálido */
+  --text: #1f1f1f;         /* carbón */
+  --muted: #6b6b6b;
+  --gold: #b9985a;         /* dorado/champán */
+  --gold-2: #d9bf8f;
+  --surface: #ffffff;
+  --surface-alt: #f6efe4;
+  --border: #e7dbc9;
+  --focus: #0ea5e9;
+}
+
+*{ box-sizing: border-box; }
+html{ scroll-behavior: smooth; }
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol", sans-serif;
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.6;
+}
+
+h1,h2,h3{
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  letter-spacing:.2px;
+  color:var(--text);
+}
+h1{ font-size: clamp(2rem, 3vw + 1rem, 3rem); line-height:1.2; }
+h2{ font-size: clamp(1.6rem, 2.2vw + .6rem, 2.2rem); margin:.2rem 0 1rem; }
+h3{ font-size: 1.22rem; margin:.2rem 0 .6rem; }
+
+.container{ width:min(1120px, 92vw); margin-inline:auto; }
+.section{ padding: clamp(3rem, 6vw, 5rem) 0; }
+.section-alt{ background: var(--surface-alt); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+.section-head{ text-align:center; margin-bottom:2rem; }
+.section-head p{ color:var(--muted); margin-top:.4rem; }
+
+/* Skip link */
+.skip-link{
+  position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden;
+}
+.skip-link:focus{ left:1rem; top:1rem; width:auto; height:auto; z-index:1000; background:#fff; color:#000; padding:.5rem .75rem; border-radius:.5rem; }
+
+/* Header + Nav */
+.site-header{ position:relative; }
+.nav{
+  display:flex; align-items:center; justify-content:space-between;
+  padding: .75rem 0;
+}
+.brand img{ display:block; }
+.menu{ display:flex; gap:1.25rem; align-items:center; }
+.menu a{ text-decoration:none; color:var(--text); font-weight:500; }
+.menu .btn{ margin-left:.25rem; }
+
+.nav-toggle{ display:none; flex-direction:column; gap:5px; background:transparent; border:0; }
+.nav-toggle span{ width:26px; height:2px; background:var(--text); display:block; }
+
+/* Hero */
+.hero{
+  position:relative; isolation:isolate;
+  background: linear-gradient( to bottom, rgba(31,31,31,.55), rgba(31,31,31,.2) ),
+              url("https://images.unsplash.com/photo-1537151672256-6f3b7b2f5b9a?q=80&w=2000") center/cover no-repeat;
+  color:#fff;
+  min-height: 58vh;
+  display:grid; place-items:center;
+}
+.hero::after{
+  content:""; position:absolute; inset:0; z-index:-1;
+}
+.hero-inner{ text-align:center; padding: 3rem 0; }
+.hero p{ max-width: 58ch; margin-inline:auto; color:#f1f1f1; }
+.hero-cta{ margin-top:1.25rem; display:flex; gap:.75rem; justify-content:center; flex-wrap:wrap; }
+
+/* Buttons */
+.btn{ --_bg:var(--surface); --_fg:var(--text); --_bd:var(--text);
+  display:inline-flex; gap:.5rem; align-items:center; justify-content:center;
+  padding:.68rem 1rem; border-radius:.6rem; border:1px solid var(--_bd);
+  color:var(--_fg); background:var(--_bg); text-decoration:none; font-weight:600;
+}
+.btn:hover{ filter:brightness(0.98); transform:translateY(-1px); transition: .2s ease; }
+.btn-primary{ --_bg: var(--gold); --_bd: var(--gold); --_fg:#1b1b1b; color:#1b1b1b; }
+.btn-outline{ --_bg: transparent; --_fg:#fff; --_bd:#fff; color:#fff; }
+
+/* Cards Servicios */
+.cards{ display:grid; grid-template-columns: repeat(6, 1fr); gap:1rem; }
+.card{
+  background:var(--surface); border:1px solid var(--border); border-radius:1rem; padding:1rem;
+  display:flex; flex-direction:column; gap:.4rem; box-shadow: 0 1px 2px rgba(0,0,0,.04);
+}
+.card .icon{ font-size:1.8rem; }
+.card .meta{ color:var(--muted); font-size:.95rem; }
+.card .link{ margin-top:auto; color:var(--gold); font-weight:600; text-decoration:none; }
+
+/* Pricing */
+.pricing{
+  display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap:1rem;
+}
+.price-card{
+  border:1px solid var(--border); border-radius:1rem; padding:1.25rem; background:#fff;
+}
+.price-card .price{ font-size:1.8rem; font-weight:700; color:#1b1b1b; margin:.4rem 0 1rem; }
+.price-card ul{ padding-left:1.1rem; margin:.6rem 0 1.2rem; }
+.price-card.featured{ border:2px solid var(--gold); background: linear-gradient(180deg, #fff, #fffaf3); }
+
+/* Galería */
+.gallery{
+  display:grid; grid-template-columns: repeat(4, 1fr); gap:.75rem;
+}
+.gallery a{ display:block; overflow:hidden; border-radius:.8rem; border:1px solid var(--border); }
+.gallery img{ display:block; width:100%; height:100%; object-fit:cover; transition: transform .35s ease; }
+.gallery a:hover img{ transform: scale(1.05); }
+
+/* Testimonials */
+.testimonials{
+  display:grid; gap:1rem; grid-template-columns: repeat(2, 1fr);
+}
+.testimonials blockquote{
+  background:#fff; border:1px solid var(--border); padding:1.25rem; border-radius:1rem; font-style:italic;
+}
+.testimonials footer{ margin-top:.5rem; color:var(--muted); font-style:normal; }
+
+/* Formulario */
+.form{ max-width: 920px; margin-inline:auto; }
+.form-grid{ grid-template-columns: repeat(3, 1fr); gap:.75rem; }
+.form label{ display:grid; gap:.35rem; font-weight:600; }
+.form input, .form select, .form textarea{
+  border:1px solid var(--border); border-radius:.6rem; padding:.7rem .8rem; background:#fff; font-size:1rem;
+}
+.form input:focus, .form select:focus, .form textarea:focus{ outline:2px solid var(--focus); outline-offset:2px; }
+.form .textarea{ margin-top:.75rem; }
+.check{ display:flex; gap:.5rem; align-items:flex-start; margin-top:.75rem; }
+.form-actions{ margin-top:1rem; display:flex; gap:.75rem; flex-wrap:wrap; }
+.status{ margin-top:.75rem; color:var(--muted); min-height:1.2em; }
+
+/* Contacto */
+.contact{ display:grid; grid-template-columns: 1fr 1.2fr; gap:1rem; align-items:start; }
+.contact .map iframe{ width:100%; height: 340px; border:0; border-radius:.8rem; }
+
+/* Footer */
+.site-footer{ background:#111; color:#eee; padding:1.25rem 0; }
+.site-footer .small{ color:#aaa; font-size:.92rem; }
+.site-footer a{ color:#eee; }
+
+/* Utilidades */
+.small{ font-size:.95rem; color:var(--muted); }
+.center{ text-align:center; }
+
+/* Responsive */
+@media (max-width: 1024px){
+  .cards{ grid-template-columns: repeat(3, 1fr); }
+  .pricing{ grid-template-columns: 1fr; }
+  .testimonials{ grid-template-columns: 1fr; }
+  .contact{ grid-template-columns: 1fr; }
+}
+@media (max-width: 720px){
+  .gallery{ grid-template-columns: repeat(2, 1fr); }
+  .form-grid{ grid-template-columns: 1fr; }
+  .menu{ position:absolute; inset: 64px 0 auto 0; background:#fff; padding:1rem; border-bottom:1px solid var(--border);
+         display:none; flex-direction:column; gap:.8rem; }
+  .nav-toggle{ display:flex; }
+  .menu.open{ display:flex; }
+}
+
+/* Dark mode (si el sistema lo pide) */
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#141414; --surface:#1b1b1b; --surface-alt:#171717; --text:#efefef; --muted:#b4b4b4; --border:#2a2a2a; }
+  .site-footer{ background:#0a0a0a; }
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce){
+  *{ transition:none !important; animation:none !important; }
+}

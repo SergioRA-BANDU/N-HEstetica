@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>N&C Estética · Cuidado facial y corporal</title>
+  <meta name="description" content="N&C Estética: tratamientos faciales y corporales, manicura, depilación y bienestar. Reserva tu cita." />
+  <meta name="theme-color" content="#1f1f1f" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="N&C Estética" />
+  <meta property="og:description" content="Cuidado facial y corporal con un toque de elegancia. Reserva tu cita." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.ejemplo.com/" />
+  <meta property="og:image" content="https://www.ejemplo.com/assets/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Fuentes elegantes -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="site-header" id="inicio" aria-label="Cabecera">
+    <div class="container nav">
+      <a class="brand" href="#inicio" aria-label="Ir al inicio">
+        <img src="assets/logo-nc.svg" alt="Logo N&C Estética" height="40">
+      </a>
+      <button class="nav-toggle" aria-controls="menu" aria-expanded="false" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="menu" class="menu" aria-label="Navegación principal">
+        <a href="#servicios">Servicios</a>
+        <a href="#precios">Precios</a>
+        <a href="#galeria">Galería</a>
+        <a href="#reserva" class="btn btn-primary">Reservar</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+    <section class="hero">
+      <div class="hero-inner container">
+        <h1>Elegancia y bienestar en cada detalle</h1>
+        <p>Tratamientos faciales y corporales, manicura, depilación y más.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#reserva">Reservar cita</a>
+          <a class="btn btn-outline" href="#servicios">Ver servicios</a>
+        </div>
+      </div>
+    </section>
+  </header>
+
+  <main id="contenido">
+    <!-- Servicios -->
+    <section id="servicios" class="section container">
+      <header class="section-head">
+        <h2>Servicios</h2>
+        <p>Selecciona tu experiencia de cuidado y belleza.</p>
+      </header>
+      <div class="grid cards">
+        <article class="card">
+          <div class="icon" aria-hidden="true">💆‍♀️</div>
+          <h3>Faciales</h3>
+          <p>Limpieza profunda, hidratación, anti-edad y luminosidad.</p>
+          <div class="meta">Desde <strong>€{{precio_facial_desde}}</strong></div>
+          <a href="#reserva" class="link">Reservar →</a>
+        </article>
+        <article class="card">
+          <div class="icon" aria-hidden="true">💅</div>
+          <h3>Manicura & Pedicura</h3>
+          <p>Clásica, semipermanente, spa y nail art.</p>
+          <div class="meta">Desde <strong>€{{precio_manicura_desde}}</strong></div>
+          <a href="#reserva" class="link">Reservar →</a>
+        </article>
+        <article class="card">
+          <div class="icon" aria-hidden="true">🧴</div>
+          <h3>Corporales</h3>
+          <p>Exfoliación, hidratación, remodelante y reafirmante.</p>
+          <div class="meta">Desde <strong>€{{precio_corporal_desde}}</strong></div>
+          <a href="#reserva" class="link">Reservar →</a>
+        </article>
+        <article class="card">
+          <div class="icon" aria-hidden="true">🕯️</div>
+          <h3>Depilación</h3>
+          <p>Cera tibia, caliente y zonas combinadas.</p>
+          <div class="meta">Desde <strong>€{{precio_depilacion_desde}}</strong></div>
+          <a href="#reserva" class="link">Reservar →</a>
+        </article>
+        <article class="card">
+          <div class="icon" aria-hidden="true">💄</div>
+          <h3>Maquillaje</h3>
+          <p>Eventos, novias y asesoría de imagen.</p>
+          <div class="meta">Desde <strong>€{{precio_maquillaje_desde}}</strong></div>
+          <a href="#reserva" class="link">Reservar →</a>
+        </article>
+        <article class="card">
+          <div class="icon" aria-hidden="true">🌿</div>
+          <h3>Bienestar</h3>
+          <p>Masaje relajante, descontracturante y aromaterapia.</p>
+          <div class="meta">Desde <strong>€{{precio_masaje_desde}}</strong></div>
+          <a href="#reserva" class="link">Reservar →</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Precios / Packs -->
+    <section id="precios" class="section section-alt">
+      <div class="container">
+        <header class="section-head">
+          <h2>Precios y Packs</h2>
+          <p>Transparencia y calidad. Personalizamos tu tratamiento.</p>
+        </header>
+
+        <div class="pricing">
+          <article class="price-card">
+            <h3>Facial Esencial</h3>
+            <p class="price">€{{precio_facial_esencial}}</p>
+            <ul>
+              <li>Limpieza + hidratación</li>
+              <li>Masaje facial</li>
+              <li>Mascarilla según necesidad</li>
+            </ul>
+            <a href="#reserva" class="btn btn-primary">Reservar</a>
+          </article>
+          <article class="price-card featured">
+            <h3>Pack Brillo</h3>
+            <p class="price">€{{precio_pack_brillo}}</p>
+            <ul>
+              <li>Facial luminosidad</li>
+              <li>Manicura semipermanente</li>
+              <li>Depilación cejas</li>
+            </ul>
+            <a href="#reserva" class="btn btn-primary">Reservar</a>
+          </article>
+          <article class="price-card">
+            <h3>Corporal Remodelante</h3>
+            <p class="price">€{{precio_corporal_remodelante}}</p>
+            <ul>
+              <li>Exfoliación + tratamiento</li>
+              <li>Masaje localizado</li>
+              <li>Recomendación domiciliaria</li>
+            </ul>
+            <a href="#reserva" class="btn btn-primary">Reservar</a>
+          </article>
+        </div>
+
+        <p class="small center">*Precios orientativos. Solicita presupuesto a medida.</p>
+      </div>
+    </section>
+
+    <!-- Galería -->
+    <section id="galeria" class="section container">
+      <header class="section-head">
+        <h2>Galería</h2>
+        <p>Un vistazo a nuestro espacio y trabajos.</p>
+      </header>
+      <div class="gallery" aria-label="Galería de imágenes">
+        <!-- Puedes reemplazar por fotos propias (./assets/galeria-1.jpg, etc.) -->
+        <a href="https://images.unsplash.com/photo-1556228578-632e8d58f3a4?q=80&w=1600" class="glight" data-caption="Cabina de tratamiento">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1556228578-632e8d58f3a4?q=80&w=600" alt="Cabina de tratamiento"/>
+        </a>
+        <a href="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?q=80&w=1600" class="glight" data-caption="Detalles de manicura">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?q=80&w=600" alt="Detalles de manicura"/>
+        </a>
+        <a href="https://images.unsplash.com/photo-1556228856-6ecf9726a3ae?q=80&w=1600" class="glight" data-caption="Área de espera">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1556228856-6ecf9726a3ae?q=80&w=600" alt="Área de espera"/>
+        </a>
+        <a href="https://images.unsplash.com/photo-1556228010-9c28b2b02b3b?q=80&w=1600" class="glight" data-caption="Productos profesionales">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1556228010-9c28b2b02b3b?q=80&w=600" alt="Productos de estética"/>
+        </a>
+      </div>
+    </section>
+
+    <!-- Opiniones -->
+    <section class="section section-alt">
+      <div class="container testimonials">
+        <blockquote>
+          “Ambiente precioso y trato impecable. ¡Mi piel cambió desde la primera visita!”
+          <footer>— {{Nombre_cliente_1}}</footer>
+        </blockquote>
+        <blockquote>
+          “La manicura dura semanas. Repetiré seguro.”
+          <footer>— {{Nombre_cliente_2}}</footer>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- Reserva -->
+    <section id="reserva" class="section container">
+      <header class="section-head">
+        <h2>Reserva tu cita</h2>
+        <p>Te confirmaremos por WhatsApp o email.</p>
+      </header>
+
+      <form id="booking-form" class="form" novalidate>
+        <!-- Si usas Formspree, descomenta la línea siguiente y pon tu endpoint:
+        action="https://formspree.io/f/xxxxxxxx"
+        method="POST"
+        -->
+        <div class="grid form-grid">
+          <label>
+            <span>Nombre</span>
+            <input type="text" name="nombre" placeholder="Tu nombre" required>
+          </label>
+
+          <label>
+            <span>Teléfono</span>
+            <input type="tel" name="telefono" placeholder="+34 ..." inputmode="tel" required>
+          </label>
+
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" placeholder="tu@email.com">
+          </label>
+
+          <label>
+            <span>Servicio</span>
+            <select name="servicio" required>
+              <option value="" disabled selected>Elige un servicio</option>
+              <option>Facial</option>
+              <option>Manicura</option>
+              <option>Corporal</option>
+              <option>Depilación</option>
+              <option>Maquillaje</option>
+              <option>Masaje</option>
+            </select>
+          </label>
+
+          <label>
+            <span>Fecha</span>
+            <input type="date" name="fecha" id="fecha" required>
+          </label>
+
+          <label>
+            <span>Hora</span>
+            <input type="time" name="hora" required>
+          </label>
+        </div>
+
+        <label class="textarea">
+          <span>Comentarios</span>
+          <textarea name="mensaje" rows="4" placeholder="Cuéntanos si tienes alguna preferencia o necesidad."></textarea>
+        </label>
+
+        <label class="check">
+          <input type="checkbox" name="consent" required>
+          <span>He leído y acepto la <a href="#" target="_blank" rel="noopener">política de privacidad</a>.</span>
+        </label>
+
+        <div class="form-actions">
+          <button class="btn btn-primary" type="submit">Enviar solicitud</button>
+          <a class="btn btn-outline" id="cta-whatsapp" href="#" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+        <p id="form-status" class="status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <!-- Contacto / Ubicación -->
+    <section id="contacto" class="section section-alt">
+      <div class="container contact">
+        <div class="contact-block">
+          <h3>Contacto</h3>
+          <ul>
+            <li>Tel: <a href="tel:+34{{telefono}}">+34 {{telefono}}</a></li>
+            <li>Email: <a href="mailto:{{email_contacto}}">{{email_contacto}}</a></li>
+            <li>Dirección: {{direccion_calle}}, {{codigo_postal}} {{ciudad}}</li>
+          </ul>
+          <h4>Horario</h4>
+          <ul class="hours">
+            <li>Lun–Vie: {{horario_l_v}}</li>
+            <li>Sáb: {{horario_sab}}</li>
+            <li>Dom: {{horario_dom}}</li>
+          </ul>
+          <div class="social">
+            <a href="{{url_instagram}}" aria-label="Instagram">Instagram</a> ·
+            <a href="{{url_facebook}}" aria-label="Facebook">Facebook</a> ·
+            <a href="{{url_tiktok}}" aria-label="TikTok">TikTok</a>
+          </div>
+        </div>
+        <div class="map">
+          <!-- Reemplaza el src por el de tu ubicación (Google Maps → Compartir → Insertar mapa) -->
+          <iframe
+            title="Mapa de ubicación"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2994.747!2d-3.7038!3d40.4168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4228!2s{{direccion_calle%20url}}!5e0!3m2!1ses!2ses!4v1234567890"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> N&C Estética. Todos los derechos reservados.</p>
+      <p class="small">CIF: {{cif}} · Aviso legal · Política de privacidad · Cookies</p>
+    </div>
+  </footer>
+
+  <!-- Schema.org: BeautySalon -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BeautySalon",
+    "name": "N&C Estética",
+    "image": "https://www.ejemplo.com/assets/og-image.jpg",
+    "logo": "https://www.ejemplo.com/assets/logo-nc.svg",
+    "telephone": "+34 985 54 57 10",
+    "email": "{{email_contacto}}",
+    "url": "https://www.ejemplo.com/",
+    "priceRange": "€€",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "{{direccion_calle}}",
+      "postalCode": "{{codigo_postal}}",
+      "addressLocality": "{{ciudad}}",
+      "addressCountry": "ES"
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "{{abre_l_v}}", "closes": "{{cierra_l_v}}" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "{{abre_sab}}", "closes": "{{cierra_sab}}" }
+    ],
+    "sameAs": ["{{url_instagram}}","{{url_facebook}}","{{url_tiktok}}"]
+  }
+  </script>
+
+  <script src="assets/script.js" defer></script>
+</body>
+</html>
