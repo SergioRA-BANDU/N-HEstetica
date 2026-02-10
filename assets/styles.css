@@ -239,3 +239,22 @@ h4{ font-size: 1.1rem; margin:.2rem 0 .4rem; }
 .section.section-alt {
   background: #1b1b1b;              /* Mantiene el fondo oscuro de la sección */
 }
+
+
+/* ===== Corrección de contraste en menú hamburguesa (móvil) ===== */
+
+@media (max-width: 720px) {
+  .menu {
+    background: #ffffff !important;
+  }
+
+  .menu a {
+    color: #1a1a1a !important;       /* texto oscuro y visible */
+    font-weight: 600 !important;     /* un poco más grueso = más legible */
+  }
+
+  .menu .btn {
+    color: #1a1a1a !important;
+    border-color: #1a1a1a !important;
+  }
+}
