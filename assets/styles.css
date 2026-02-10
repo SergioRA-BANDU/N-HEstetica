@@ -21,20 +21,24 @@ body{
   line-height:1.6;
 }
 
-h1,h2,h3{
+h1,h2,h3,h4{
   font-family: "Playfair Display", Georgia, "Times New Roman", serif;
   letter-spacing:.2px;
   color:var(--text);
 }
 h1{ font-size: clamp(2rem, 3vw + 1rem, 3rem); line-height:1.2; }
 h2{ font-size: clamp(1.6rem, 2.2vw + .6rem, 2.2rem); margin:.2rem 0 1rem; }
-h3{ font-size: 1.22rem; margin:.2rem 0 .6rem; }
+h3{ font-size: 1.28rem; margin:.2rem 0 .6rem; }
+h4{ font-size: 1.1rem; margin:.2rem 0 .4rem; }
 
 .container{ width:min(1120px, 92vw); margin-inline:auto; }
 .section{ padding: clamp(3rem, 6vw, 5rem) 0; }
 .section-alt{ background: var(--surface-alt); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
 .section-head{ text-align:center; margin-bottom:2rem; }
 .section-head p{ color:var(--muted); margin-top:.4rem; }
+
+.subhead h3{ margin:.2rem 0 .2rem; }
+.subhead .small{ color:var(--muted); margin-bottom:1rem; }
 
 /* Skip link */
 .skip-link{
@@ -45,8 +49,10 @@ h3{ font-size: 1.22rem; margin:.2rem 0 .6rem; }
 /* Header + Nav */
 .site-header{ position:relative; }
 .nav{
+  position:sticky; top:0; z-index:10;
   display:flex; align-items:center; justify-content:space-between;
   padding: .75rem 0;
+  backdrop-filter: saturate(180%) blur(8px);
 }
 .brand img{ display:block; }
 .menu{ display:flex; gap:1.25rem; align-items:center; }
@@ -54,13 +60,13 @@ h3{ font-size: 1.22rem; margin:.2rem 0 .6rem; }
 .menu .btn{ margin-left:.25rem; }
 
 .nav-toggle{ display:none; flex-direction:column; gap:5px; background:transparent; border:0; }
-.nav-toggle span{ width:26px; height:2px; background:var(--text); display:block; }
+.nav-toggle span{ width:26px; height:2px; background:var(--text); display:block; border-radius:2px; }
 
 /* Hero */
 .hero{
   position:relative; isolation:isolate;
   background: linear-gradient( to bottom, rgba(31,31,31,.55), rgba(31,31,31,.2) ),
-              url("https://images.unsplash.com/photo-1537151672256-6f3b7b2f5b9a?q=80&w=2000") center/cover no-repeat;
+              url("Background.png") center/cover no-repeat;
   color:#fff;
   min-height: 58vh;
   display:grid; place-items:center;
@@ -77,13 +83,14 @@ h3{ font-size: 1.22rem; margin:.2rem 0 .6rem; }
   display:inline-flex; gap:.5rem; align-items:center; justify-content:center;
   padding:.68rem 1rem; border-radius:.6rem; border:1px solid var(--_bd);
   color:var(--_fg); background:var(--_bg); text-decoration:none; font-weight:600;
+  transition: .2s ease transform, .2s ease filter;
 }
-.btn:hover{ filter:brightness(0.98); transform:translateY(-1px); transition: .2s ease; }
+.btn:hover{ filter:brightness(0.98); transform:translateY(-1px); }
 .btn-primary{ --_bg: var(--gold); --_bd: var(--gold); --_fg:#1b1b1b; color:#1b1b1b; }
 .btn-outline{ --_bg: transparent; --_fg:#fff; --_bd:#fff; color:#fff; }
 
 /* Cards Servicios */
-.cards{ display:grid; grid-template-columns: repeat(6, 1fr); gap:1rem; }
+.grid.cards{ display:grid; grid-template-columns: repeat(5, 1fr); gap:1rem; }
 .card{
   background:var(--surface); border:1px solid var(--border); border-radius:1rem; padding:1rem;
   display:flex; flex-direction:column; gap:.4rem; box-shadow: 0 1px 2px rgba(0,0,0,.04);
@@ -100,8 +107,14 @@ h3{ font-size: 1.22rem; margin:.2rem 0 .6rem; }
   border:1px solid var(--border); border-radius:1rem; padding:1.25rem; background:#fff;
 }
 .price-card .price{ font-size:1.8rem; font-weight:700; color:#1b1b1b; margin:.4rem 0 1rem; }
-.price-card ul{ padding-left:1.1rem; margin:.6rem 0 1.2rem; }
+.price-card ul{ padding-left:0; margin:.6rem 0 1.2rem; list-style:none; }
 .price-card.featured{ border:2px solid var(--gold); background: linear-gradient(180deg, #fff, #fffaf3); }
+.price-list li{
+  display:flex; justify-content:space-between; gap:1rem;
+  border-bottom:1px dashed var(--border); padding:.5rem 0;
+}
+.price-list li span{ color:var(--text); }
+.price-list li strong{ color:#1b1b1b; }
 
 /* Galería */
 .gallery{
@@ -122,7 +135,7 @@ h3{ font-size: 1.22rem; margin:.2rem 0 .6rem; }
 
 /* Formulario */
 .form{ max-width: 920px; margin-inline:auto; }
-.form-grid{ grid-template-columns: repeat(3, 1fr); gap:.75rem; }
+.form-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap:.75rem; }
 .form label{ display:grid; gap:.35rem; font-weight:600; }
 .form input, .form select, .form textarea{
   border:1px solid var(--border); border-radius:.6rem; padding:.7rem .8rem; background:#fff; font-size:1rem;
@@ -147,8 +160,10 @@ h3{ font-size: 1.22rem; margin:.2rem 0 .6rem; }
 .center{ text-align:center; }
 
 /* Responsive */
+@media (max-width: 1180px){
+  .grid.cards{ grid-template-columns: repeat(3, 1fr); }
+}
 @media (max-width: 1024px){
-  .cards{ grid-template-columns: repeat(3, 1fr); }
   .pricing{ grid-template-columns: 1fr; }
   .testimonials{ grid-template-columns: 1fr; }
   .contact{ grid-template-columns: 1fr; }
@@ -171,4 +186,56 @@ h3{ font-size: 1.22rem; margin:.2rem 0 .6rem; }
 /* Reduce motion */
 @media (prefers-reduced-motion: reduce){
   *{ transition:none !important; animation:none !important; }
+}
+
+/* ===== Mejora de contraste en títulos de secciones de precios ===== */
+
+.price-card h3 {
+  color: #1a1a1a !important;      /* Texto muy oscuro */
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+/* ===== Mejora de contraste y legibilidad dentro de la lista ===== */
+
+.price-list li {
+  color: #2a2a2a !important;      /* Texto más oscuro */
+  font-size: 1rem;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15) !important;
+  padding: 0.45rem 0;
+}
+
+.price-list li span {
+  color: #2a2a2a !important;      /* Color del nombre del servicio */
+}
+
+.price-list li strong {
+  color: #000 !important;         /* Precio bien visible */
+  font-weight: 700;
+}
+
+/* ==== Mejora de visibilidad en testimonios ==== */
+
+.testimonials blockquote {
+  color: #2a2a2a !important;        /* Texto principal más oscuro */
+  font-style: italic;
+}
+
+.testimonials blockquote footer {
+  color: #4a4a4a !important;        /* Nombre del cliente en gris más visible */
+  font-weight: 600;
+}
+
+.testimonials {
+  color: #2a2a2a;
+}
+
+.section.section-alt .testimonials blockquote {
+  background: #ffffff;              /* Fondo claro pero sin transparencia */
+  border: 1px solid #d8d8d8;
+}
+
+.section.section-alt {
+  background: #1b1b1b;              /* Mantiene el fondo oscuro de la sección */
 }
