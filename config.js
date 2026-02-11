@@ -30,13 +30,13 @@ window.SITE_CONFIG = {
   url_tiktok: "https://www.tiktok.com/@testing_nc_estetica",
 
   // Marca y URLs
-  nombre_salon: "N&C Estética",
+  nombre_salon: "SergioRA",
   url_web: "https://sergiora-bandu.github.io/N-HEstetica/",
   og_image: "https://media.istockphoto.com/id/851007946/es/foto/mujer-conseguir-pelo-shampooed-en-sal%C3%B3n.jpg?s=612x612&w=0&k=20&c=L3wMHl3ssV9bNO3HqiBcB3FNtNPtKCyrVnib4Gjb90o=",
   logo_url: "assets/logo-nc.svg",
 
   // SEO
-  titulo: "N&C Estética · Peluquería y Belleza en Asturias",
+  titulo: "SergioRA · Peluquería y Belleza en Asturias",
   descripcion: "Peluquería mujer y hombre, color, mechas, tratamientos capilares, extensiones, faciales, maquillaje, depilación, pestañas y cejas, manicura y pedicura. Reserva tu cita.",
   price_range: "€€",
 
