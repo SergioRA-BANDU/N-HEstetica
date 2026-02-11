@@ -1,8 +1,8 @@
 // config.js — valores globales del sitio
 window.SITE_CONFIG = {
   // Contacto
-  telefono: "34985545710",                 // número para tel: y WhatsApp (sin espacios/signos)
-  telefono_visible: "+34 985 54 57 10",    // cómo se muestra en la web
+  telefono: "34638467455",                 // número para tel: y WhatsApp (sin espacios/signos)
+  telefono_visible: "+34 638 46 74 55",    // cómo se muestra en la web
   email: "bandujo13a@gmail.com",
 
   // Dirección
